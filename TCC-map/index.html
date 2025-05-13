@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mapa Acessível - Login</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="auth-container">
+            <!-- Formulário de Login -->
+            <div class="auth-box" id="login-box">
+                <h1>
+                    <i class="fas fa-universal-access"></i>
+                    Mapa Acessível
+                </h1>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">E-mail</label>
+                        <input
+                            type="email"
+                            id="login-email"
+                            placeholder="seu@email.com"
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="login-senha">Senha</label>
+                        <input
+                            type="password"
+                            id="login-senha"
+                            placeholder="••••••••"
+                            required
+                        >
+                    </div>
+                    <button type="submit" class="btn-primary">Entrar</button>
+                    <div class="auth-links">
+                        <a href="#" id="show-register">Criar conta</a>
+                        <a href="#" id="show-recovery">Esqueci a senha</a>
+                    </div>
+                </form>
+            </div>
+            <!-- Formulário de Cadastro -->
+            <div class="auth-box" id="register-box" style="display:none">
+                <h1>
+                    <i class="fas fa-user-plus"></i>
+                    Criar Conta
+                </h1>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-nome">Nome Completo</label>
+                        <input
+                            type="text"
+                            id="register-nome"
+                            placeholder="Seu nome"
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">E-mail</label>
+                        <input
+                            type="email"
+                            id="register-email"
+                            placeholder="seu@email.com"
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="register-senha">Senha</label>
+                        <input
+                            type="password"
+                            id="register-senha"
+                            placeholder="••••••••"
+                            required
+                        >
+                        <div class="password-strength">
+                            <div class="strength-bar" id="password-strength-bar"></div>
+                        </div>
+                        <small class="password-hint">Mínimo 8 caracteres com números e símbolos</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Necessidades Específicas</label>
+                        <div class="checkbox-grid">
+                            <label>
+                                <input type="checkbox" name="necessidades" value="cadeirante"> Cadeirante
+                            </label>
+                            <label>
+                                <input type="checkbox" name="necessidades" value="baixa-visao"> Baixa visão
+                            </label>
+                            <label>
+                                <input type="checkbox" name="necessidades" value="cegueira"> Cegueira
+                            </label>
+                            <label>
+                                <input type="checkbox" name="necessidades" value="surdez"> Surdez
+                            </label>
+                            <label>
+                                <input type="checkbox" name="necessidades" value="deficiencia-auditiva"> Deficiência auditiva
+                            </label>
+                            <label>
+                                <input type="checkbox" name="necessidades" value="deficiencia-motora"> Deficiência motora
+                            </label>
+                            <label>
+                                <input type="checkbox" name="necessidades" value="deficiencia-intelectual"> Deficiência intelectual
+                            </label>
+                            <label>
+                                <input type="checkbox" name="necessidades" value="autismo"> Autismo
+                            </label>
+                            <label>
+                                <input type="checkbox" name="necessidades" value="mobilidade-reduzida"> Mobilidade reduzida
+                            </label>
+                            <label>
+                                <input type="checkbox" name="necessidades" value="obesidade"> Obesidade
+                            </label>
+                            <label>
+                                <input type="checkbox" name="necessidades" value="gestante"> Gestante
+                            </label>
+                            <label>
+                                <input type="checkbox" name="necessidades" value="idoso"> Idoso
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-primary">Cadastrar</button>
+                    <div class="auth-links">
+                        <a href="#" id="show-login">Já tenho conta</a>
+                    </div>
+                </form>
+            </div>
+            <!-- Recuperação de Senha -->
+            <div class="auth-box" id="recovery-box" style="display:none">
+                <h1>
+                    <i class="fas fa-key"></i>
+                    Recuperar Senha
+                </h1>
+                <form id="recovery-form">
+                    <div class="form-group">
+                        <label for="recovery-email">E-mail</label>
+                        <input
+                            type="email"
+                            id="recovery-email"
+                            placeholder="seu@email.com"
+                            required
+                        >
+                    </div>
+                    <button type="submit" class="btn-primary">Enviar Link</button>
+                    <div class="auth-links">
+                        <a href="#" id="back-to-login">Voltar ao login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

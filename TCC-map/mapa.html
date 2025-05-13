@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mapa Acessível</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="header">
+            <button id="sidebar-toggle" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h2>
+                <i class="fas fa-map-marked-alt"></i>
+                Mapa Acessível
+            </h2>
+            <div class="user-info">
+                <div class="user-avatar" id="user-avatar"></div>
+                <span id="user-name"></span>
+                <button class="logout-btn" id="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </button>
+            </div>
+        </div>
+        <div id="app-container">
+            <div id="sidebar">
+                <div class="form-section">
+                    <h3>
+                        <i class="fas fa-plus-circle"></i>
+                        Adicionar Local
+                    </h3>
+                    <form id="location-form">
+                        <div class="form-group">
+                            <label>Nome do Local</label>
+                            <input type="text" id="location-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Endereço</label>
+                            <input type="text" id="location-address" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Tipo de Acessibilidade</label>
+                            <select id="location-type" required>
+                                <option value="">Selecione...</option>
+                                <option value="rampa">Rampa de acesso</option>
+                                <option value="banheiro">Banheiro adaptado</option>
+                                <option value="elevador">Elevador acessível</option>
+                                <option value="piso">Piso tátil</option>
+                                <option value="sinalizacao">Sinalização tátil</option>
+                                <option value="corrimao">Corrimão</option>
+                                <option value="vagas">Vagas especiais</option>
+                                <option value="audio">Sinalização sonora</option>
+                                <option value="braille">Sinalização em Braille</option>
+                                <option value="circulacao">Espaço para circulação</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Descrição (opcional)</label>
+                            <textarea id="location-description" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Avaliação</label>
+                            <div class="rating">
+                                <span class="star" data-value="1">☆</span>
+                                <span class="star" data-value="2">☆</span>
+                                <span class="star" data-value="3">☆</span>
+                                <span class="star" data-value="4">☆</span>
+                                <span class="star" data-value="5">☆</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Foto (opcional)</label>
+                            <input type="file" id="location-photo" accept="image/*">
+                        </div>
+                        <button type="submit" class="btn-primary">Salvar Local</button>
+                    </form>
+                </div>
+                <div class="locations-list">
+                    <h3>
+                        <i class="fas fa-list"></i>
+                        Locais Cadastrados
+                    </h3>
+                    <div class="form-group">
+                        <input type="text" id="location-filter" placeholder="Filtrar locais...">
+                    </div>
+                    <div id="locations-container"></div>
+                </div>
+            </div>
+            <div id="map"></div>
+        </div>
+        <div class="footer">
+            <div class="search-container">
+                <input type="text" id="global-search" placeholder="Pesquisar locais...">
+                <button id="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
